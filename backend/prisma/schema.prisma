@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Materia {
+  id           Int      @id @default(autoincrement())
+  titulo       String
+  texto        String
+  linkAuxiliar String?
+  inseridoEm   DateTime @default(now())
+  anexos       Anexo[]
+}
+
+model Anexo {
+  id          Int      @id @default(autoincrement())
+  nomeArquivo String
+  tipoArquivo String
+  inseridoEm  DateTime @default(now())
+  
+  // Foreign Key
+  materiaId   Int
+  materia     Materia  @relation(fields: [materiaId], references: [id], onDelete: Cascade)
+}

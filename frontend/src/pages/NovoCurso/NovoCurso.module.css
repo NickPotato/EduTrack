@@ -1,0 +1,33 @@
+.container {
+  max-width: 880px;
+  margin: 28px auto;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.04);
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: var(--text);
+  padding-left: 6px;
+  border-left: 4px solid #fd6925; /* pequeno destaque */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadBox {
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.uploadLabel {
+  display:block;
+  margin-bottom:8px;
+  color: var(--muted-text);
+  font-size: 14px;
+}

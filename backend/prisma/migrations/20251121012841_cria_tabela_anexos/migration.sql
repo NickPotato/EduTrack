@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Anexo" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nomeArquivo" TEXT NOT NULL,
+    "inseridoEm" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "materiaId" INTEGER NOT NULL,
+    CONSTRAINT "Anexo_materiaId_fkey" FOREIGN KEY ("materiaId") REFERENCES "Materia" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);

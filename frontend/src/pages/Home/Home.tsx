@@ -9,6 +9,7 @@ interface Curso {
   titulo: string;
   texto: string;
   anexos?: { id: number }[];
+  imagemSrc?: string;  // ← ADICIONADO
 }
 
 export function Home() {
